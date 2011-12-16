@@ -2,10 +2,12 @@
 #define HUFFMAN_H
 
 #define ENGLISH		0
-#define EALPHABETSZ	26
+#define EALPHABETSZ	27
 #define GERMAN 		1
 
 #define ALPHABETSZ	50
+
+#define MAXDEPTH	10
 
 
 
@@ -41,6 +43,7 @@ unsigned char get_language(char *input, unsigned char *array);
 unsigned char analyze_frequency(unsigned char *array);
 void traverse_tree(struct huffman_node *node, unsigned char depth, unsigned short counter);
 void encode_huffman(char *input, char *output);
+void decode_huffman(char *input, char *output, struct huffman_node *node);
 unsigned char append_code(unsigned short code, unsigned char length,
 							unsigned char free, int *bitstream,
 							unsigned char mod);
